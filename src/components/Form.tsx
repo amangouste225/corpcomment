@@ -2,7 +2,7 @@ import { TbTriangleFilled } from "react-icons/tb";
 
 export default function Form() {
   return (
-    <div className="rounded-3xl relative w-full overflow-hidden bg-black flex flex-col items-center gap-5 justify-center">
+    <div className="rounded-t-3xl relative max-w-screen-md w-full overflow-hidden bg-black flex flex-col items-center gap-5 justify-center">
       <div className="flex flex-col  justify-center items-center bg-hero-pattern w-full py-6">
         <h3 className="font-bold">
           <div className="flex relative">
