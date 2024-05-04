@@ -1,11 +1,11 @@
+import CommentList from "./components/CommentList";
 import Form from "./components/Form";
-import Sidebar from "./components/Sidebar";
 
 export default function Container() {
   return (
-    <section className="mx-auto rounded-xl py-10 flex justify-center gap-10">
+    <main className="relative mx-auto rounded-xl flex flex-col justify-start ml-20">
       <Form />
-      <Sidebar />
-    </section>
+      <CommentList />
+    </main>
   );
 }

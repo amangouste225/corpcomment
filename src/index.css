@@ -1,6 +1,7 @@
 /* FONTS STYLES */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap");
+
+/*  */
 :root {
   font-family: Inter, sans-serif;
   line-height: 1.5;
@@ -44,4 +45,11 @@
   left: -10px;
   top: -8px;
   transform: rotate(25deg);
+}
+
+body {
+  background: violet;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
