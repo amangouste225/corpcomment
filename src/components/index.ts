@@ -1,4 +1,4 @@
 import Footer from "../Footer";
-import Header from "./Hstag";
+import Header from "./hashtag/Hstag";
 
 export { Header, Footer };

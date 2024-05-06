@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "./components/Hstag";
+import Header from "./components/hashtag/Hstag";
 import Container from "./Container";
 // import Footer from "./Footer";
 import "./index.css";
@@ -10,6 +10,7 @@ function App() {
   const [commentList, setCommentList] = useState<FeedBack[]>([]);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [selectedCompany, setSelectedCompany] = useState("");
 
   const handleAddToList = async (text: string) => {
     const companyN = text
@@ -37,6 +38,14 @@ function App() {
     });
   };
 
+  const companyList = commentList
+    .map((company) => company.company)
+    .filter((company, index, array) => array.indexOf(company) === index);
+
+  const selectedItem = selectedCompany
+    ? commentList.filter((tag) => tag.company === selectedCompany)
+    : commentList;
+
   useEffect(() => {
     const fetchFeedBack = async () => {
       setLoading(true);
@@ -60,9 +69,9 @@ function App() {
   }, []);
   return (
     <div className="max-w-screen-lg py-10 mx-auto relative">
-      <Header />
+      <Header companyList={companyList} onFilter={setSelectedCompany} />
       <Container
-        commentList={commentList}
+        commentList={selectedItem}
         loading={loading}
         errorMessage={errorMessage}
         handleAddToList={handleAddToList}
