@@ -1,7 +1,11 @@
 import { TbTriangleFilled } from "react-icons/tb";
 import FeedbackForm from "./FeedbackForm";
 
-export default function Form() {
+type FormProps = {
+  handleAddToList: (text: string) => void;
+};
+
+export default function Form({ handleAddToList }: FormProps) {
   return (
     <div className="rounded-t-3xl relative max-w-[750px] overflow-hidden bg-black flex flex-col items-center gap-5 justify-center">
       <div className="flex flex-col  justify-center items-center bg-hero-pattern w-full pt-6">
@@ -24,7 +28,7 @@ export default function Form() {
           Give Feedbacks. <span className="italic">Publicly.</span>
         </h1>
       </div>
-      <FeedbackForm />
+      <FeedbackForm onAddToList={handleAddToList} />
     </div>
   );
 }
