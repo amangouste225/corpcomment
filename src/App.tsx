@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleAddToList = (text: string) => {
+  const handleAddToList = async (text: string) => {
     const companyN = text
       .split(" ")
       .find((word) => word.includes("#"))!
@@ -20,12 +20,21 @@ function App() {
     const newItem: FeedBack = {
       text: text,
       upvoteCount: 0,
-      companyName: companyN,
+      company: companyN,
       badgeLetter: companyN.substring(0, 1).toUpperCase(),
       daysAgo: 0,
       id: Date.now(),
     };
     setCommentList((prev) => [...prev, newItem]);
+
+    await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(newItem),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
   };
 
   useEffect(() => {

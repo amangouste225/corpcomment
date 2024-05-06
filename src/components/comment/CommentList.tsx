@@ -1,4 +1,4 @@
-import { FeedBack } from "../lib/types";
+import { FeedBack } from "../../lib/types";
 import Comment from "./Comment";
 
 type CommentListProps = {

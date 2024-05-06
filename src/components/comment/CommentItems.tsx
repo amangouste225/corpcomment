@@ -1,5 +1,5 @@
 import { TriangleUpIcon } from "@radix-ui/react-icons";
-import { FeedBack } from "../lib/types";
+import { FeedBack } from "../../lib/types";
 
 type FeedbackCommentItem = {
   commentItem: FeedBack;
@@ -21,12 +21,14 @@ export default function CommentItems({ commentItem }: FeedbackCommentItem) {
 
         <div className="text-left flex-1">
           <p className="uppercase text-gray-400 font-semibold">
-            {commentItem.companyName}
+            {commentItem.company}
           </p>
           <p>{commentItem.text}</p>
         </div>
 
-        <p className="text-md">{commentItem.daysAgo}d</p>
+        <p className="text-md">
+          {commentItem.daysAgo === 0 ? "NEW" : `${commentItem.daysAgo}d`}
+        </p>
       </button>
     </li>
   );

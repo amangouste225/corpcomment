@@ -1,7 +1,7 @@
 import CommentItems from "./CommentItems";
-import Spinner from "./Spinner";
-import ErrorMessage from "./ErrorMessage";
-import { FeedBack } from "../lib/types";
+import Spinner from "../Spinner";
+import ErrorMessage from "../ErrorMessage";
+import { FeedBack } from "../../lib/types";
 type CommentProps = {
   commentList: FeedBack[];
   loading: boolean;

@@ -1,5 +1,5 @@
 import { TbTriangleFilled } from "react-icons/tb";
-import FeedbackForm from "./FeedbackForm";
+import FeedbackForm from "../comment/FeedbackForm";
 
 type FormProps = {
   handleAddToList: (text: string) => void;

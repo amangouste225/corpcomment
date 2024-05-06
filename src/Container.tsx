@@ -1,5 +1,5 @@
-import CommentList from "./components/CommentList";
-import Form from "./components/Form";
+import CommentList from "./components/comment/CommentList";
+import Form from "./components/layout/Form";
 import { FeedBack } from "./lib/types";
 
 type ContainerProps = {
