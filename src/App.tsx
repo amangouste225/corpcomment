@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Header from "./components/hashtag/Hstag";
 import Container from "./Container";
 // import Footer from "./Footer";
@@ -38,13 +38,21 @@ function App() {
     });
   };
 
-  const companyList = commentList
-    .map((company) => company.company)
-    .filter((company, index, array) => array.indexOf(company) === index);
+  const companyList = useMemo(
+    () =>
+      commentList
+        .map((company) => company.company)
+        .filter((company, index, array) => array.indexOf(company) === index),
+    [commentList]
+  );
 
-  const selectedItem = selectedCompany
-    ? commentList.filter((tag) => tag.company === selectedCompany)
-    : commentList;
+  const selectedItem = useMemo(
+    () =>
+      selectedCompany
+        ? commentList.filter((tag) => tag.company === selectedCompany)
+        : commentList,
+    [commentList, selectedCompany]
+  );
 
   useEffect(() => {
     const fetchFeedBack = async () => {
