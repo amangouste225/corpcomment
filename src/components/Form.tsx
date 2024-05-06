@@ -3,8 +3,8 @@ import FeedbackForm from "./FeedbackForm";
 
 export default function Form() {
   return (
-    <div className="rounded-t-3xl relative max-w-screen-md w-full overflow-hidden bg-black flex flex-col items-center gap-5 justify-center">
-      <div className="flex flex-col  justify-center items-center bg-hero-pattern w-full py-6">
+    <div className="rounded-t-3xl relative max-w-[750px] overflow-hidden bg-black flex flex-col items-center gap-5 justify-center">
+      <div className="flex flex-col  justify-center items-center bg-hero-pattern w-full pt-6">
         <a href="/">
           <h3 className="font-bold">
             <div className="flex relative">
@@ -20,7 +20,7 @@ export default function Form() {
             Corp <span className="font-thin">Comment</span>
           </h3>
         </a>
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-3xl font-bold">
           Give Feedbacks. <span className="italic">Publicly.</span>
         </h1>
       </div>
@@ -28,5 +28,3 @@ export default function Form() {
     </div>
   );
 }
-
-//  className="w-[600px] relative mb-10

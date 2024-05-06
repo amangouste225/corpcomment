@@ -6,9 +6,6 @@ export default function Hstag() {
       <Button>#ByteGrad</Button>
       <Button>#StartBucks</Button>
       <Button>#Amazon</Button>
-      <Button>#Opera</Button>
-      <Button>#WkiPedia</Button>
-      <Button>#Google</Button>
     </header>
   );
 }

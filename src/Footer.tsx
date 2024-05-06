@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="absolute -left-32 -rotate-90">
+    <footer className="rotate-90">
       <small>
         <p className="font-medium text-base">
           &copy; Copyright by{" "}
