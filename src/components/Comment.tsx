@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentItems from "./CommentItems";
+import Spinner from "./Spinner";
 const url =
   "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks";
 
@@ -13,6 +14,7 @@ export default function Comment() {
         setLoading(true);
         const res = await fetch(url);
         const data = await res.json();
+        setLoading(false);
         setCommentList(data.feedbacks);
       } catch (error) {
         console.error("Error");
@@ -22,10 +24,16 @@ export default function Comment() {
     fetchFeedBack();
   }, []);
   return (
-    <ol className="text-black">
-      {commentList.slice(0, 10).map((commentItem) => (
-        <CommentItems key={commentItem.id} commentItem={commentItem} />
-      ))}
+    <ol className="text-black relative">
+      {loading ? (
+        <Spinner />
+      ) : (
+        commentList
+          .slice(0, 10)
+          .map((commentItem) => (
+            <CommentItems key={commentItem.id} commentItem={commentItem} />
+          ))
+      )}
     </ol>
   );
 }
